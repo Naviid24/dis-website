@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Get a Quote{% endblock %}
+{% block content %}
+<h2>Request a Quote</h2>
+<form method="post" enctype="multipart/form-data" novalidate>
+  {% csrf_token %}
+  <div class="row g-3">
+    <div class="col-md-6">{{ form.name.label_tag }}{{ form.name }}</div>
+    <div class="col-md-6">{{ form.email.label_tag }}{{ form.email }}</div>
+    <div class="col-md-6">{{ form.phone.label_tag }}{{ form.phone }}</div>
+    <div class="col-md-6">{{ form.service.label_tag }}{{ form.service }}</div>
+    <div class="col-12">{{ form.description.label_tag }}{{ form.description }}</div>
+    <div class="col-12">{{ form.image.label_tag }}{{ form.image }}</div>
+  </div>
+  <button class="btn btn-primary btn-cta mt-3" type="submit">Send Quote Request</button>
+</form>
+{% endblock %}

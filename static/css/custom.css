@@ -1,0 +1,19 @@
+:root{
+  --brand-orange: #FE751C;
+  --brand-dark: #091014;
+  --accent: var(--brand-orange);
+}
+body { color: var(--brand-dark); font-family: system-ui, Arial, sans-serif; }
+
+.btn-cta {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-cta:hover { opacity: .95; transform: translateY(-1px); transition: .15s; }
+
+.hero {
+  background-image: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85));
+  padding: 4rem 1rem;
+}

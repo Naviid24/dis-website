@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="hero py-5 text-center">
+  <h1 class="display-5">Complete Home Renovations</h1>
+  <p class="lead">Luxury kitchens & bathrooms — Newcastle upon Tyne</p>
+  <a class="btn btn-lg btn-cta" href="{% url 'quote' %}">Get a Free Quote</a>
+</div>
+
+<!-- Add a small gallery / featured projects -->
+<div class="row mt-5">
+  <div class="col-md-4"> <!-- project card --></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+</div>
+{% endblock %}
