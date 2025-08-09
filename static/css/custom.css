@@ -3,7 +3,20 @@
   --brand-dark: #091014;
   --accent: var(--brand-orange);
 }
-body { color: var(--brand-dark); font-family: system-ui, Arial, sans-serif; }
+body { color: var(--brand-dark); font-family: system-ui, Arial, sans-serif; 
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;        /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;                  /* takes up all available space */
+}
+
 
 .btn-cta {
   background: var(--accent);
@@ -16,4 +29,28 @@ body { color: var(--brand-dark); font-family: system-ui, Arial, sans-serif; }
 .hero {
   background-image: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85));
   padding: 4rem 1rem;
+}
+
+/* Keep navbar compact but allow logo to appear bigger */
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid var(--brand-orange); /* orange bottom line */
+}
+
+.navbar .nav-link.active {
+  background-color: var(--brand-orange);
+  color: white !important;
+  border-radius: 4px; /* optional for rounded corners */
+}
+
+
+.logo-img {
+  height: 70px; /* visually bigger than default */
+  margin-top: -8px;  /* shift up so it doesn't push navbar height */
+  margin-bottom: -8px; /* shift down slightly if needed */
+}
+
+footer {
+  border-top: 3px solid var(--brand-orange); /* same orange as navbar bottom */
 }

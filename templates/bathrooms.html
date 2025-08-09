@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Bathrooms{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="text-center py-5">
+  <h1 class="display-5 fw-bold">Luxury Bathrooms</h1>
+  <p class="lead">Spa-like comfort, modern elegance, and superior quality.</p>
+</section>
+
+<!-- About Bathrooms -->
+<section class="mb-5">
+  <p>
+    Transform your bathroom into a luxurious retreat with DSI Property Solutions. 
+    We offer tailored designs featuring elegant tiling, premium fixtures, 
+    and layouts that blend beauty with practicality. Whether you want a sleek 
+    modern space or a traditional sanctuary, we bring your vision to life.
+  </p>
+</section>
+
+<!-- Bathrooms Gallery -->
+<section class="mb-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="{% static 'images/bathroom1.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury bathroom 1">
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/bathroom2.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury bathroom 2">
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/bathroom3.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury bathroom 3">
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<div class="text-center my-5">
+  <a href="{% url 'quote' %}" class="btn btn-lg btn-cta">Get a Free Quote</a>
+</div>
+
+{% endblock %}

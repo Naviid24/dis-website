@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Kitchens{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="text-center py-5">
+  <h1 class="display-5 fw-bold">Luxury Kitchens</h1>
+  <p class="lead">Tailored designs, premium finishes, and expert craftsmanship.</p>
+</section>
+
+<!-- About Kitchens -->
+<section class="mb-5">
+  <p>
+    At DSI Property Solutions, our kitchens combine modern innovation with timeless elegance. 
+    We specialise in bespoke cabinetry, high-end appliances, and functional layouts that 
+    elevate your home. From concept to completion, our team ensures every detail matches 
+    your vision for the perfect culinary space.
+  </p>
+</section>
+
+<!-- Kitchens Gallery -->
+<section class="mb-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="{% static 'images/kitchen1.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury kitchen 1">
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/kitchen2.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury kitchen 2">
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/kitchen3.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury kitchen 3">
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<div class="text-center my-5">
+  <a href="{% url 'quote' %}" class="btn btn-lg btn-cta">Get a Free Quote</a>
+</div>
+
+{% endblock %}
