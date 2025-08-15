@@ -1,0 +1,103 @@
+:root{
+  --brand-orange: #FE751C;
+  --brand-dark: #091014;
+  --accent: var(--brand-orange);
+}
+body { color: var(--brand-dark); font-family: system-ui, sans-serif; 
+  height: 100%;
+  margin: 0;
+  justify-content: center;    /* horizontal center */
+  align-items: center;        /* vertical center */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;        /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;                  /* takes up all available space */
+}
+
+
+.btn-cta {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-cta:hover { opacity: .95; transform: translateY(-1px); transition: .15s; }
+
+.hero {
+  background-image: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85));
+  padding: 4rem 1rem;
+}
+
+/* Keep navbar compact but allow logo to appear bigger */
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid var(--brand-orange); /* orange bottom line */
+}
+
+.navbar .nav-link.active {
+  background-color: var(--brand-orange);
+  color: white !important;
+  border-radius: 4px; /* optional for rounded corners */
+}
+
+.bg-content {
+  background-color: #eef0f3; /* light gray background */
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.logo-img {
+  height: 70px; /* visually bigger than default */
+  margin-top: -8px;  /* shift up so it doesn't push navbar height */
+  margin-bottom: -8px; /* shift down slightly if needed */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.quote-form {
+  background-color: #f8f9fa;  /* light grey background for the form */
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.orange-border {
+  border: 2px solid var(--brand-orange) !important;
+}
+
+.box-back {
+  background-color: #f8f9fa;
+  padding: 20px;
+  line-height: 170%;
+}
+
+.inline-logo {
+  position: relative;
+  top: -8px; /* move upward — adjust this value until it looks perfect */
+  height: 1.4em; /* size relative to text height */
+}
+
+.equal-height-img {
+  height: 400px;       /* set fixed height */
+  width: auto;         /* auto width to keep aspect ratio */
+  object-fit: cover;   /* crop the image to fill height */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+footer {
+  border-top: 3px solid var(--brand-orange); /* same orange as navbar bottom */
+}
