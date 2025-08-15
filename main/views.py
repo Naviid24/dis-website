@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.core.mail import send_mail
 from .forms import QuoteForm
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+import mimetypes
 
 
 def home(request):
@@ -25,13 +27,32 @@ def quote_view(request):
         form = QuoteForm(request.POST, request.FILES)
         if form.is_valid():
             quote = form.save()
-            # Send email (console backend prints to terminal)
-            send_mail(
+
+            # Render HTML content for the email
+            html_content = render_to_string("quote_email.html", {"quote": quote})
+
+            # Create email
+            email = EmailMultiAlternatives(
                 subject=f"New Quote Request - {quote.service}",
-                message=f"Name: {quote.name}\nEmail: {quote.email}\nPhone: {quote.phone}\n\n{quote.description}",
+                body=f"New quote request from {quote.name}",
                 from_email=None,  # uses DEFAULT_FROM_EMAIL
-                recipient_list=["you@yourdomain.co.uk"],  # change to your email
+                to=["dsipropertysolutions@gmail.com"],  # your email
             )
+
+            # Attach HTML content
+            email.attach_alternative(html_content, "text/html")
+
+            # Attach uploaded image if exists
+            if quote.image:
+                # Guess MIME type
+                mime_type, _ = mimetypes.guess_type(quote.image.name)
+                if not mime_type:
+                    mime_type = "application/octet-stream"
+                email.attach(quote.image.name, quote.image.read(), mime_type)
+
+            # Send the email via SendGrid
+            email.send(fail_silently=False)
+
             messages.success(request, "Thanks — we will get in touch with you soon.")
             return redirect("quote")
     else:

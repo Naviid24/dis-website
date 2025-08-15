@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Bathrooms{% endblock %}
 {% block content %}
+{% load static %}
 
 <!-- Hero Section -->
 <section class="text-center py-5">
@@ -9,7 +10,7 @@
 </section>
 
 <!-- About Bathrooms -->
-<section class="mb-5">
+<section class="mb-5 bg-content">
   <p>
     Transform your bathroom into a luxurious retreat with DSI Property Solutions. 
     We offer tailored designs featuring elegant tiling, premium fixtures, 
@@ -20,15 +21,15 @@
 
 <!-- Bathrooms Gallery -->
 <section class="mb-5">
-  <div class="row g-4">
+  <div class="row g-4 ">
     <div class="col-md-4">
-      <img src="{% static 'images/bathroom1.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury bathroom 1">
+      <img src="{% static 'images/bathroom1.jpg' %}" class="img-fluid rounded shadow-sm equal-height-img " alt="Luxury bathroom 1">
     </div>
     <div class="col-md-4">
-      <img src="{% static 'images/bathroom2.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury bathroom 2">
+      <img src="{% static 'images/bathroom2.jpg' %}" class="img-fluid rounded shadow-sm equal-height-img " alt="Luxury bathroom 2">
     </div>
     <div class="col-md-4">
-      <img src="{% static 'images/bathroom3.jpg' %}" class="img-fluid rounded shadow-sm" alt="Luxury bathroom 3">
+      <img src="{% static 'images/bathroom3.jpg' %}" class="img-fluid rounded shadow-sm equal-height-img " alt="Luxury bathroom 3">
     </div>
   </div>
 </section>

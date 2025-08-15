@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Get a Quote{% endblock %}
+{% block content %}
+
+
+<h2>New Quote Request</h2>
+<p>A new quote has been submitted on your website:</p>
+
+<table class="quote-details" style="margin-top:20px; font-family:Arial, sans-serif;">
+  <tr>
+    <th style="text-align:left; padding-right:10px;">Name:</th>
+    <td>{{ quote.name }}</td>
+  </tr>
+  <tr>
+    <th style="text-align:left; padding-right:10px;">Email:</th>
+    <td>{{ quote.email }}</td>
+  </tr>
+  <tr>
+    <th style="text-align:left; padding-right:10px;">Phone:</th>
+    <td>{{ quote.phone }}</td>
+  </tr>
+  <tr>
+    <th style="text-align:left; padding-right:10px;">Service:</th>
+    <td>{{ quote.get_service_display }}</td>
+  </tr>
+  <tr>
+    <th style="text-align:left; padding-right:10px;">Description:</th>
+    <td>{{ quote.description|linebreaksbr }}</td>
+  </tr>
+</table>
+
+{% if quote.image %}
+  <div style="margin-top:20px;">
+    <p>Attached Image:</p>
+    <img src="{{ quote.image.url }}" alt="Quote Image" style="max-width:400px;">
+  </div>
+{% endif %}
+
+<p>Submitted on: {{ quote.created_at|date:"F j, Y, g:i a" }}</p>
+
+{% endblock %}

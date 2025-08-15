@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="text-center py-5">
+  <h1 class="display-5 fw-bold">About <img src="{% static 'images/logo.png' %}" class="logo-img inline-logo" alt="DSI logo"> Property Solutions</h1>
+  <p class="lead">Your trusted partner for luxury kitchens, bathrooms, and home renovations in Newcastle upon Tyne.</p>
+</section>
+
+<!-- Company Story -->
+<section class="mb-5 box-back">
+  <p>
+    At <strong>DSI Property Solutions</strong>, we believe your home should reflect your personality,
+    lifestyle, and taste for quality. With years of experience in designing and installing
+    luxury kitchens and bathrooms, our mission is to create spaces that are as functional
+    as they are beautiful.
+  </p>
+  <p>
+    Based in Newcastle upon Tyne, we proudly serve homeowners across the North East,
+    delivering projects with meticulous attention to detail and uncompromising craftsmanship.
+  </p>
+</section>
+
+<!-- Our Values -->
+<section class="mb-5">
+  <div class="row g-4">
+    <div class="col-md-4 text-center">
+      <div class="p-4 orange-border rounded shadow-sm h-100">
+        <h5 class="fw-bold">Premium Quality</h5>
+        <p>We use only high-end materials and trusted brands to ensure every project lasts for years to come.</p>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="p-4 orange-border rounded shadow-sm h-100">
+        <h5 class="fw-bold">Tailored Design</h5>
+        <p>Every kitchen and bathroom is custom-designed to fit your unique style and home layout.</p>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="p-4 orange-border rounded shadow-sm h-100">
+        <h5 class="fw-bold">Customer Care</h5>
+        <p>From the first consultation to the final polish, we keep you informed and involved every step of the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<div class="text-center my-5">
+  <a href="{% url 'quote' %}" class="btn btn-lg btn-cta">Get a Free Quote</a>
+</div>
+
+{% endblock %}
