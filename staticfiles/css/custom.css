@@ -1,8 +1,10 @@
 :root{
   --brand-orange: #FE751C;
   --brand-dark: #091014;
+  --brand-background: #eef0f3;
   --accent: var(--brand-orange);
 }
+
 body { color: var(--brand-dark); font-family: system-ui, sans-serif; 
   height: 100%;
   margin: 0;
@@ -11,6 +13,7 @@ body { color: var(--brand-dark); font-family: system-ui, sans-serif;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/*..........Base */
 .wrapper {
   min-height: 100vh;        /* full viewport height */
   display: flex;
@@ -19,20 +22,6 @@ body { color: var(--brand-dark); font-family: system-ui, sans-serif;
 
 .content {
   flex: 1;                  /* takes up all available space */
-}
-
-
-.btn-cta {
-  background: var(--accent);
-  border: none;
-  color: #fff;
-  font-weight: 600;
-}
-.btn-cta:hover { opacity: .95; transform: translateY(-1px); transition: .15s; }
-
-.hero {
-  background-image: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85));
-  padding: 4rem 1rem;
 }
 
 /* Keep navbar compact but allow logo to appear bigger */
@@ -46,6 +35,25 @@ body { color: var(--brand-dark); font-family: system-ui, sans-serif;
   background-color: var(--brand-orange);
   color: white !important;
   border-radius: 4px; /* optional for rounded corners */
+}
+
+/*..........Home */
+.btn-cta {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-cta:hover { opacity: .95; transform: translateY(-1px); transition: .15s; }
+
+.hero-txt {
+  background: var(--brand-background);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.space-txt {
+  letter-spacing: 2px;
 }
 
 .bg-content {
@@ -66,7 +74,7 @@ html, body {
 }
 
 .quote-form {
-  background-color: #f8f9fa;  /* light grey background for the form */
+  background-color: var(--brand-background);  /* light grey background for the form */
   max-width: 400px;
   width: 90%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -74,12 +82,6 @@ html, body {
 
 .orange-border {
   border: 2px solid var(--brand-orange) !important;
-}
-
-.box-back {
-  background-color: #f8f9fa;
-  padding: 20px;
-  line-height: 170%;
 }
 
 .inline-logo {
@@ -97,6 +99,12 @@ html, body {
   margin-right: auto;
 }
 
+/*..........About */
+.box-back {
+  background-color: var(--brand-background);
+  padding: 20px;
+  line-height: 170%;
+}
 
 footer {
   border-top: 3px solid var(--brand-orange); /* same orange as navbar bottom */
